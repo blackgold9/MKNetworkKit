@@ -412,6 +412,20 @@ static NSOperationQueue *_sharedNetworkQueue;
     return op;
 }
 
+-(void)cancelAllOperationsWithTag:(NSInteger)tag
+{
+    __block int count = 0;
+    [_sharedNetworkQueue.operations enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        MKNetworkOperation *op = obj;
+        if(op.tag == tag) {
+            [op cancel];
+            count += 1;
+        }
+    }];
+    
+    DLog(@"Cancelled %d operations", count);
+}
+
 #pragma mark -
 #pragma mark Cache related
 

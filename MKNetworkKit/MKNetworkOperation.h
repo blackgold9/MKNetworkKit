@@ -198,6 +198,15 @@ typedef enum {
 @property (nonatomic, assign) BOOL freezable;
 
 /*!
+ * @abstract Tag Property
+ * @property tag
+ * @discussion
+ * Assign a tag to an operation so that you can cancel all operations with a given tag later.
+ * For example, cancel all image load opeartions when you navigate away from a controller
+ */
+@property (nonatomic, assign) NSInteger tag;
+
+/*!
  *  @abstract Error object
  *  @property error
  *  

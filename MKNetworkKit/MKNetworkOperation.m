@@ -115,7 +115,7 @@
 @synthesize credentialPersistence = _credentialPersistence;
 
 @synthesize startPosition = _startPosition;
-
+@synthesize tag = _tag;
 #if TARGET_OS_IPHONE    
 @synthesize backgroundTaskId = _backgroundTaskId;
 #endif

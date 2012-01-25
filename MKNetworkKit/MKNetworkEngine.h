@@ -198,6 +198,14 @@
 -(void) enqueueOperation:(MKNetworkOperation*) operation forceReload:(BOOL) forceReload;
 
 /*!
+ * @abstract Cancel operations with a specific tag
+ *
+ * @discussion
+ * This method enumerates through all operations in the queue, and cancels any matching the given tag
+ */
+-(void)cancelAllOperationsWithTag:(NSInteger)tag;
+
+/*!
  *  @abstract HostName of the engine
  *  @property readonlyHostName
  *  
